@@ -12,7 +12,14 @@ const app = express();
 
 const PORT = ENV.PORT || 5000;
 
-app.use(cors({ origin: ENV.CLIENT_URL, credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",             
+    "https://donum-store.vercel.app",    
+    "https://abs-donum.vercel.app"       
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(errorHandler);
