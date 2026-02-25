@@ -36,15 +36,16 @@ const Navbar = () => {
           <Link
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             to="/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-1"
           >
             <img
               src="/images/logo.png"
               alt="Donum Logo"
-              className="h-6 w-6 object-contain"
+              className="h-7 w-auto object-contain"
             />
-            <span className="text-[24px] font-poppins font-bold tracking-wide text-[#760815]">
-              DONUM
+
+            <span className="hidden tracking-widest pb-0.5 sm:inline text-[24px] font-poppins font-bold tracking-wide text-[#760815]">
+              ONUM
             </span>
           </Link>
 
