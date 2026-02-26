@@ -13,20 +13,22 @@ export const CartProvider = ({ children }) => {
   }, [cartItems])
 
   const addToCart = (product, qty = 1) => {
+  const productId = product._id || product.id
+
   setCartItems((prev) => {
-    const existing = prev.find((item) => item.id === product.id)
+    const existing = prev.find((item) => item.id === productId)
 
     if (existing) {
       return prev.map((item) =>
-        item.id === product.id
+        item.id === productId
           ? { ...item, quantity: item.quantity + qty }
           : item
       )
     }
 
-      return [...prev, { ...product, quantity: qty }]
-    })
-  }
+    return [...prev, { ...product, id: productId, quantity: qty }]
+  })
+}
 
   const increaseQty = (id) => {
     setCartItems((prev) =>

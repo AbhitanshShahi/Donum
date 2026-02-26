@@ -49,7 +49,7 @@ export const getProducts = async (req, res) => {
     }
 
     if (search) {
-      filter.title = { $regex: search, $options: "i" };
+      filter.name = { $regex: search, $options: "i" };
     }
 
     const products = await Product.find(filter).populate("collection");
